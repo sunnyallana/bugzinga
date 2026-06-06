@@ -1,0 +1,54 @@
+{
+  "name": "bugzinga",
+  "version": "0.1.0",
+  "description": "Bazinga for bugs. Query bugs from GitHub or Azure DevOps, import their full context (branch, environment, repro steps, screenshots), then drive Claude Code, Cursor, or Codex through a rigorous reproduce → investigate → propose → fix → validate → report pipeline — while you work on something else.",
+  "keywords": [
+    "bugs",
+    "debugging",
+    "ai-agents",
+    "claude-code",
+    "cursor",
+    "codex",
+    "azure-devops",
+    "github-issues",
+    "pointbreak",
+    "automation"
+  ],
+  "author": "Sunny Shaban <sunny.shaban@astera.com>",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "bin": {
+    "bugzinga": "dist/cli/index.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/copy-assets.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build && npm run lint && npm test"
+  },
+  "dependencies": {
+    "commander": "^14.0.0",
+    "picocolors": "^1.1.1",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.0",
+    "@types/node": "^24.0.0",
+    "eslint": "^9.30.0",
+    "typescript": "^5.8.0",
+    "typescript-eslint": "^8.35.0",
+    "vitest": "^3.2.0"
+  }
+}

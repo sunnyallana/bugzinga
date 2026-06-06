@@ -1,0 +1,3 @@
+### Guiding principle: KISS
+
+Keep every change surgical. Change only what is required to address the root cause — no defensive armor, no preemptive try/catch blocks, no refactoring of unrelated code, no "while we're here" cleanups, no inline justifications. If a bug needs N lines fixed, change exactly N lines. If reasoning is worth recording, put it in the phase artifact — not as code comments. This principle binds every phase: investigation reasons about the *minimum* change needed; the fixer implements *only* that change; the reporter documents *what was done*, not what could also have been improved.
